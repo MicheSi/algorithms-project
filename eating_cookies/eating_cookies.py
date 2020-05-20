@@ -4,15 +4,14 @@ Returns: an integer
 '''
 def eating_cookies(n):
     # Your code here
-    # Way 1: eat 1 + 1 + 1 cookies
-    # Way 2: eat 1 + 2 cookies 
-    # Way 3: eat 3 cookies
-    # Way 4: eat 2 + 1 cookie 
+    # Can eat 0, 1, 2, or 3 cookies at a time
     # return should be 4
-    if n == 0 or n == 1:
+    if n <= 0 or n == 1:
         return 1
-    if n <= 2:
-        return n
+    if n == 2:
+        return 2
+    if n == 3:
+        return 4
     return eating_cookies(n - 1) + eating_cookies(n - 2) + eating_cookies(n - 3)
 
 if __name__ == "__main__":
