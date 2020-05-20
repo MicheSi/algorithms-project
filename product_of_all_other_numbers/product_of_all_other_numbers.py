@@ -4,9 +4,26 @@ Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
     # Your code here
+    # make new array of products
+    products = [0 for _ in range(len(arr))]
+    # will need to get product of each integer before current
+    # store product so far
+    curr_prod = 1
+    # loop through array and get new product
+    for i in range(len(arr)):
+        # set index
+        products[i] = curr_prod
+        # multiply numbers not including index
+        curr_prod *= arr[i]
+    # get product of each int after current
+    # store product so far of other integers
+    curr_prod = 1
 
-    pass
-
+    for i in range(len(arr) - 1, -1, -1):
+        products[i] *= curr_prod
+        curr_prod *= arr[i]
+    
+    return products
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
