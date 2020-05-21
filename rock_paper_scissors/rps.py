@@ -4,6 +4,10 @@ import sys
 
 def rock_paper_scissors(n):
   # Your code here
+  # make list for all possible moves
+  all_moves = []
+  # make list of move options
+  options = ['rock', 'paper', 'scissors']
 
   pass
 
